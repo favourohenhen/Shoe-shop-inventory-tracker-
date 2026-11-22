@@ -8,61 +8,133 @@
   <body>
     <section class="container">
       <aside>
-        <p class="icon">Shoe Inventory</p>
-
+        <div class="top-card">
+          <p>Icon</p>
+          <p>Shoe Inventory</p>
+        </div>
         <section class="main-menu">
           <ul>
-            <li>Dashboard</li>
-            <li>Dashboard</li>
+            <li><a href="">Home</a></li>
+            <li><a href="">My Store</a></li>
+            <li><a href="">Analytics Report</a></li>
           </ul>
         </section>
+        <section class="bottom-card">
+          <img src="" alt="" />
+          <div class="author-information">
+            <h2 class="author-name">James Doe</h2>
+            <p>CEO-ShoeInventory</p>
+          </div>
+        </section>
       </aside>
-      <header>
-        <section class="left-side">
-          <h1 class="welcome-text">Welcome, Admin</h1>
-        </section>
-        <section class="right-side">
-          <button type="button">➕ Add Product</button>
-        </section>
+      <header class="brand-information">
+        <div class="left-side">
+          <img src="" alt="" />
+          <p>Shoe Inventory</p>
+        </div>
+        <button
+          type="button"
+          aria-label="Open Navigation"
+          aria-expanded="false"
+          class="hamburger"
+          onclick="toggleMenu()"
+        >
+          ☰
+        </button>
       </header>
-      <main class="site-container">
-        <section class="summary-box">
-          <div class="box">
-            <h2 class="box-text">Total Asset</h2>
-            <p class="total-asset-figure">20,000</p>
-          </div>
-          <div class="box">
-            <h2 class="box-text">Total Asset</h2>
-            <p class="total-asset-figure">20,000</p>
-          </div>
-          <div class="box">
-            <h2 class="box-text">Total Asset</h2>
-            <p class="total-asset-figure">20,000</p>
-          </div>
-          <div class="box">
-            <h2 class="box-text">Total Asset</h2>
-            <p class="total-asset-figure">20,000</p>
-          </div>
-        </section>
-        <section class="sales-container">
-          <div class="Ls-search-box">
-            <input
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Search"
-            />
-          </div>
-          <div class="Rs-search-box">
-            <input
-              type="date"
-              name=""
-              id=""
-              placeholder="12 Sept - 12 October"
-            />
-          </div>
+      <main>
+        <section class="inventory-page" aria-labelledby="inventory-title">
+          <header class="inventory-header">
+            <h1 id="inventory-title">Inventory</h1>
+
+            <div class="inventory-actions">
+              <button type="button">Import</button>
+              <button type="button">Export</button>
+              <button type="button" class="primary">Add Product</button>
+            </div>
+          </header>
+
+          <section class="summary-grid" aria-label="Inventory summary">
+            <article class="summary-card">
+              <h2>Total Asset Value</h2>
+              <p class="summary-value">$0</p>
+            </article>
+
+            <article class="summary-card">
+              <h2>Products</h2>
+              <p class="summary-value">2379</p>
+
+              <div class="stock-breakdown">
+                <div
+                  class="stock-bar"
+                  aria-label="Stock status: 1452 in stock, 355 low stock, 186 out of stock"
+                >
+                  <span class="in-stock" style="width: 61%"></span>
+                  <span class="low-stock" style="width: 15%"></span>
+                  <span class="out-of-stock" style="width: 8%"></span>
+                </div>
+
+                <p>
+                  <span class="green-dot"></span> In stock:
+                  <strong>1452</strong>
+                </p>
+                <p>
+                  <span class="yellow-dot"></span> Low stock:
+                  <strong>355</strong>
+                </p>
+                <p>
+                  <span class="red-dot"></span> Out of stock:
+                  <strong>186</strong>
+                </p>
+              </div>
+            </article>
+
+            <article class="summary-card">
+              <h2>Total Sales</h2>
+              <p class="summary-value">₦0</p>
+            </article>
+          </section>
+
+          <section class="inventory-card" aria-labelledby="products-title">
+            <h2 id="products-title">Products</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>  <input
+          type="checkbox"
+          value="${inventory[i].sku}"
+          aria-label="Select ${inventory[i].name}"
+        ></th>
+                  <th>Product</th>
+                  <th>SKU</th>
+                  <th>Category</th>
+                  <th>Size</th>
+                  <th>Colour</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="inventory-list">
+                <!-- <tr>
+            <td>
+              <img src="shoe.jpg" alt="Nike Air Max shoe" />
+              Nike Air Max
+            </td>
+            <td>NAM-001</td>
+            <td>Shoes</td>
+            <td>$120</td>
+            <td>24</td>
+            <td>In stock</td>
+          </tr> -->
+              </tbody>
+            </table>
+          </section>
         </section>
       </main>
     </section>
+    <script src="index.js"></script>
   </body>
 </html>
