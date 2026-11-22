@@ -1,10 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --color-background: #f5f5f5;
+  --color-text: #1f2933;
+  --color-text-muted: #4b5563;
+  --color-link: #007f73;
+  --color-link-hover: #00665c;
+  --color-muted: #ffffff;
+  --color-border: #d7e2df;
+  --content-width: 72rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+   /* width: min(100% - 2rem, var(--content-width)); */
+}
+.container {
+ 
+  margin-inline: auto;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 250px 1fr;
+}
+.left-container{
+  border-right: 3px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: #555;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-link i {
+  width: 20px;
+  text-align: center;
+}
+
+.active-page.active {
+  background: var(--color-muted);
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0.3em;
+}
+
+.nav-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-dropdown summary {
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 8px 46px;
+}
+
+.submenu a {
+  display: block;
+  padding: 9px;
+  color: #666;
+  text-decoration: none;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown[open] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+.right-container{
+    padding: 1em 0;
+}
+/* Styling of the inventory summary card */
+.inventory-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--color-muted);
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.asset-value {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.asset-value p {
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.stock-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.product-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stock-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+}
+/* Progress bar colors */
+.stock-bar {
+  display: flex;
+  width: 100%;
+  height: 8px;
+  gap: 4px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.stock-bar span {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.in-stock {
+  width: 46.67%;
+  background-color: #16a34a;
+}
+
+.low-stock {
+  width: 33.33%;
+  background-color: #eab308;
+}
+
+.out-of-stock {
+  width: 20%;
+  background-color: #dc2626;
+}
+@media (min-width: 768px) {
+  .inventory-summary {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .asset-value {
+    width: 220px;
+    padding-right: 24px;
+    padding-bottom: 0;
+    border-bottom: none;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .stock-breakdown {
+    flex: 1;
+    padding-left: 24px;
+  }
+}
+.inventory-card {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .inventory-table {
   width: 100%;
+  min-width: 950px;
   border-collapse: collapse;
 }
 
 .inventory-table th,
 .inventory-table td {
-  padding: 14px 16px;
+  padding: 1em 1.5em;
   text-align: left;
+  white-space: nowrap;
+}
+
+.search-field {
+  position: relative;
+  max-width: 100%;
+  width: fit-content;
+}
+
+.search-field input {
+  padding: 0.9em;
+  border-radius: 10px;
+  /* border: white; */
+}
+
+.search-field button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }

@@ -4,21 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shoe Inventory and Sales Tracker | Inventory Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
     <section class="container">
-      <aside>
+      <aside class="left-container">
         <div class="top-card">
-          <p>Icon</p>
+          <p><i class="fa-solid fa-shoe-prints"></i></p>
           <p>Shoe Inventory</p>
+          <nav aria-label="Main navigation">
+            <ul class="sidebar-menu">
+              <li>
+                <a href="#home" class="nav-link active" aria-current="page">
+                  <i class="fa-solid fa-house" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+<li>
+  <details class="nav-dropdown">
+
+    <summary class="nav-link">
+      <span class="nav-label">
+        <i class="fa-solid fa-box" aria-hidden="true"></i>
+        <span>My Store</span>
+      </span>
+
+      <i class="fa-solid fa-chevron-down dropdown-arrow"
+         aria-hidden="true"></i>
+    </summary>
+
+    <ul class="submenu">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#orders">Orders</a></li>
+      <li><a href="#inventory" class="active-page active">Inventory</a></li>
+    </ul>
+
+  </details>
+</li>
+              <li>
+                <a href="#inventory" class="nav-link">
+                  <i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+                  <span>Inventory</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#sales" class="nav-link">
+                  <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                  <span>Sales</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <section class="main-menu">
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">My Store</a></li>
-            <li><a href="">Analytics Report</a></li>
-          </ul>
-        </section>
+
         <section class="bottom-card">
           <img src="" alt="" />
           <div class="author-information">
@@ -27,98 +70,105 @@
           </div>
         </section>
       </aside>
-      <header class="brand-information">
-        <div class="left-side">
-          <img src="" alt="" />
-          <p>Shoe Inventory</p>
-        </div>
-        <button
-          type="button"
-          aria-label="Open Navigation"
-          aria-expanded="false"
-          class="hamburger"
-          onclick="toggleMenu()"
-        >
-          ☰
-        </button>
-      </header>
-      <main>
-        <section class="inventory-page" aria-labelledby="inventory-title">
-          <header class="inventory-header">
-            <h1 id="inventory-title">Inventory</h1>
+      <section class="right-container">
+        <header class="brand-information">
+          <div class="left-side">
+            <i class="fa-solid fa-shoe-prints"></i>
+            <p>Shoe Inventory</p>
+          </div>
+          <button
+            type="button"
+            aria-label="Open Navigation"
+            aria-expanded="false"
+            class="hamburger"
+            onclick="toggleMenu()"
+          >
+            ☰
+          </button>
+        </header>
+        <main>
+          <section class="inventory-page" aria-labelledby="inventory-title">
+            <header class="inventory-header">
+              <h1 id="inventory-title">Inventory</h1>
 
-            <div class="inventory-actions">
-              <button type="button">Import</button>
-              <button type="button">Export</button>
-              <button type="button" class="primary">Add Product</button>
-            </div>
-          </header>
+              <div class="inventory-actions">
+                <button class="action-btn">
+                  <i class="fa-solid fa-upload" aria-hidden="true"></i>
+                  <span>Import</span>
+                </button>
 
-          <section class="summary-grid" aria-label="Inventory summary">
-            <article class="summary-card">
-              <h2>Total Asset Value</h2>
-              <p class="summary-value">$0</p>
-            </article>
+                <button class="action-btn">
+                  <i class="fa-solid fa-file-export" aria-hidden="true"></i>
+                  <span>Export</span>
+                </button>
 
-            <article class="summary-card">
-              <h2>Products</h2>
-              <p class="summary-value">2379</p>
+                <button class="action-btn add-btn">
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                  <span>Add Product</span>
+                </button>
+              </div>
+            </header>
+
+            <section class="inventory-summary">
+              <div class="asset-value">
+                <p>Total Asset Value</p>
+                <h2>₦2,450,000</h2>
+              </div>
 
               <div class="stock-breakdown">
-                <div
-                  class="stock-bar"
-                  aria-label="Stock status: 1452 in stock, 355 low stock, 186 out of stock"
-                >
-                  <span class="in-stock" style="width: 61%"></span>
-                  <span class="low-stock" style="width: 15%"></span>
-                  <span class="out-of-stock" style="width: 8%"></span>
+                <div class="product-count">
+                  <h2>60</h2>
+                  <span>Products</span>
                 </div>
 
-                <p>
-                  <span class="green-dot"></span> In stock:
-                  <strong>1452</strong>
-                </p>
-                <p>
-                  <span class="yellow-dot"></span> Low stock:
-                  <strong>355</strong>
-                </p>
-                <p>
-                  <span class="red-dot"></span> Out of stock:
-                  <strong>186</strong>
-                </p>
+                <div class="stock-bar">
+                  <span class="in-stock"></span>
+                  <span class="low-stock"></span>
+                  <span class="out-of-stock"></span>
+                </div>
+
+                <div class="stock-legend">
+                  <span>In stock: 28</span>
+                  <span>Low stock: 20</span>
+                  <span>Out of stock: 12</span>
+                </div>
               </div>
-            </article>
+            </section>
+            <section class="inventory-card" aria-labelledby="products-title">
+              <!-- <h2 id="products-title">Products</h2> -->
+              <div class="search-field">
+                <input type="search" placeholder="Search inventory..." />
 
-            <article class="summary-card">
-              <h2>Total Sales</h2>
-              <p class="summary-value">₦0</p>
-            </article>
-          </section>
+                <button type="button" aria-label="Search inventory">
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+              </div>
+              <table class="inventory-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <input
+                        type="checkbox"
+                        value="${inventory[i].sku}"
+                        aria-label="Select ${inventory[i].name}"
+                      />
+                    </th>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Colour</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
 
-          <section class="inventory-card" aria-labelledby="products-title">
-            <h2 id="products-title">Products</h2>
-
-            <table>
-              <thead>
-                <tr>
-                  <th>  <input
-          type="checkbox"
-          value="${inventory[i].sku}"
-          aria-label="Select ${inventory[i].name}"
-        ></th>
-                  <th>Product</th>
-                  <th>SKU</th>
-                  <th>Category</th>
-                  <th>Size</th>
-                  <th>Colour</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-
-              <tbody id="inventory-list">
-                <!-- <tr>
+                <tbody id="inventory-list">
+                  <!-- <tr>
             <td>
               <img src="shoe.jpg" alt="Nike Air Max shoe" />
               Nike Air Max
@@ -129,11 +179,12 @@
             <td>24</td>
             <td>In stock</td>
           </tr> -->
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </section>
           </section>
-        </section>
-      </main>
+        </main>
+      </section>
     </section>
     <script src="index.js"></script>
   </body>
