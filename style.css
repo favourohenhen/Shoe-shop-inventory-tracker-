@@ -66,7 +66,9 @@ body {
   font-size: 1.5em;
   color: var(--color-link);
 }
-
+.brand i{
+   color: var(--color-link)
+}
 .brand-text {
   text-align: left;
 }
@@ -239,7 +241,7 @@ body {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   background: var(--color-muted);
-  -webkit-overflow-scrolling: touch;
+ 
 }
 
 .search-field {
@@ -302,6 +304,32 @@ body {
   border-bottom: none;
 }
 
+/* STYLING THE INVENTORY QUANTITY STATUS */
+.status-in-stock {
+  color: green;
+  background-color: #dcfce7;
+  padding: 0.2em 0.8em;
+  border-radius: 10px;
+   text-align: center;
+}
+
+.status-low-stock {
+  color: #a16207;
+  background-color: #fef9c3;
+   padding: 0.2em  0.8em;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.status-out-of-stock{
+  color: red;
+  background-color: #fee2e2;
+   padding:  0.2em  0.8em;
+  border-radius: 10px;
+   text-align: center;
+}
+
+/* DESKTOP  */
 @media (min-width: 768px) {
   .container {
     grid-template-columns: 250px minmax(0, 1fr);
